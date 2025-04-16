@@ -10,3 +10,9 @@ object roxana {
         return cliente.precioPactadoPorKm() * km
     }
 }
+
+object gabriela {
+    method precioViaje(cliente, km) {
+        return cliente.precioPactadoPorKm() * km * 1.2
+    }
+}

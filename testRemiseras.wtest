@@ -1,13 +1,14 @@
 // Veamos cuánto cobra cada remisera un viaje de 10 kilómetros. En lo que sigue, se supone que Ana María está económicamente estable, y que no se cambió el valor pactado con Teresa.
-// - _Roxana_: a Ludmila 180 pesos (18 * 10), a Ana María 300, a Teresa 220.
-// - _Gabriela_: a Ludmila 216 pesos (180 * 1.2), a Ana María 360, a Teresa 264.
+
+
 // - _Mariela_: lo mismo que Roxana.
 // - _Juana_: 200 pesos a todos.
 
 import remiseras.*
 import clientes.*
 
-describe "tests de cobro de viaje de 10km" {
+// - _Roxana_: a Ludmila 180 pesos (18 * 10), a Ana María 300, a Teresa 220.
+describe "(Roxana) tests de cobro de viaje de 10km" {
 
     test "roxana le cobra 180 pesos por 10km a ludmila" {
         assert.equals(180, roxana.precioViaje(ludmila,10))
@@ -21,5 +22,22 @@ describe "tests de cobro de viaje de 10km" {
     test "roxana le cobra a teresa 220 por 10km" {
         const cantidadDeKm = 10
         assert.equals(220, roxana.precioViaje(teresa, cantidadDeKm))
+    }
+}
+
+// Gabriela: a Ludmila 216 pesos (180 * 1.2), a Ana María 360, a Teresa 264.
+describe "(Gabriela) tests de cobro de viaje de 10km" {
+        test "gabriela le cobra 180 pesos por 10km a ludmila" {
+        assert.equals(216, gabriela.precioViaje(ludmila,10))
+    }
+
+    test "gabriela le cobra 300 por 10km a ana maria (estable)" {
+        const cantidadDeKm = 10
+        assert.equals(360, gabriela.precioViaje(anaMaria, cantidadDeKm))
+    }
+
+    test "gabriela le cobra a teresa 220 por 10km" {
+        const cantidadDeKm = 10
+        assert.equals(264, gabriela.precioViaje(teresa, cantidadDeKm))
     }
 }
