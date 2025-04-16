@@ -33,5 +33,11 @@ object anaMaria {
 
 // **Teresa**: arranca en 22 pesos el kilómetro, puede cambiar a cualquier otro valor.
 object teresa {
+  var precioPorKmVariable = 22
 
+  method precioPactadoPorKm() = precioPorKmVariable
+
+  method cambiarPrecioPorKm(nuevoPrecio) {
+    precioPorKmVariable = nuevoPrecio
+  }
 }
